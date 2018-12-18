@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<div class="row">
+  <div class="col-sm-4 header"><img src="../{{page.image}}" alt="project_logo" class="project"></div>
+  <div class="col-sm-6">
+    <h1>{{ page.title }}</h1>
+    <div class="dscrpt_subtitle">{{page.subtitle}}</div>
+    <div class="info">
+      {%for tag in page.tags%}
+      <span class="area">{{tag}}</span>
+      {% endfor %}<span class="status" style="background-color:{{page.status_color}}">{{page.status}}</span>
+      {%if page.github%}
+      <a href="{{page.github}}">
+        <span class="githubLink">
+          <img src="../img/github_logo.png" class="githubImg">
+          repository
+        </span>
+      </a><br>
+      {%endif%}
+    </div>
+    <div class="summary">{{page.summary}}</div>
+    <br>
+    {{ content }}
+  </div>
+</div>

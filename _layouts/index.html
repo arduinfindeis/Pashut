@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<!-- Projects -->
+<div class="row">
+  <div class="col-sm-4 header">Projects</div>
+  <div class="col-sm-7">
+  {% assign sorted_projects = site.projects | sort:"order" %}
+  {% for project in sorted_projects %}
+    <div class="row">
+      <div class="col-sm-1 picture"><a href="{{ project.url }}"><img src="{{project.image}}" alt="edinburgh_img" class="project"></a></div>
+      <div class="col-sm-9 description">
+        <div class="dscrpt_title"><a href="{{ project.url }}">{{ project.title }}</a></div>
+        <div class="dscrpt_subtitle">{{project.subtitle}}</div>
+        <div class="info">
+          {%for tag in project.tags%}
+          <span class="area">{{tag}}</span>
+          {% endfor %}<span class="status" style="background-color:{{project.status_color}}">{{project.status}}</span>
+          {%if project.github%}
+          <a href="{{project.github}}">
+            <span class="githubLink">
+              <img src="../img/github_logo.png" class="githubImg">
+              repository
+            </span>
+          </a><br>
+          {%endif%}
+        </div>
+        <div class="summary">{{project.summary}}</div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-7"><hr /></div>
+</div>
+      <!-- Places -->
+<div class="row">
+  <div class="col-sm-4 header">Short CV</div>
+  <div class="col-sm-7">
+    {% for place in site.places %}
+    <div class="row">
+      <div class="col-sm-1 picture">
+        <img src={{place.image}} alt="img" class="place">
+      </div>
+      <div class="col-sm-9 description">
+        <div class="dscrpt_title">{{place.title}}</div>
+        <div class="dscrpt_subtitle"><span>{{place.dates}}</span></div>
+        {{place.content}}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
