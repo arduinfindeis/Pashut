@@ -11,7 +11,7 @@ A design template for a minimalist portfolio site based on Jekyll.
 git clone https://github.com/arduinfindeis/Pashut.git
 ```
 
-Check out the official tutorial to use Jekyll at https://jekyllrb.com/docs/step-by-step/01-setup/
+Check out the official tutorial to use Jekyll at https://jekyllrb.com/docs/step-by-step/01-setup/. 
 
 
 ## License
